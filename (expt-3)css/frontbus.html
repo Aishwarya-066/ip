@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Red Bus</title>
+    <link rel="stylesheet" href="stylef.css">
+</head>
+<!--rgba(128, 0, 0, 1)-->
+<style>
+    .popup{
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        display: none;
+        justify-content: right;
+        align-items: center;
+    }
+    .pop_content{
+        height: 250px;
+        width: 500px;
+        background-image: url('https://s3.rdbuz.com/Images/carousel/Hero_Tweak.png');
+        background-repeat: no-repeat;
+        padding: 20px;
+        border-radius: 5px;
+        position: fixed;
+    }
+    
+</style>
+<body>
+    <div class="intro">
+        <div class="topnav">
+            <a href="form.html">sign up or Login</a>
+            <a href="notice.html">Notice</a>
+            <a href="tickets.html">My Tickets</a>
+            <a href="#home">Home</a>
+            <img src="https://cdn-images-1.medium.com/max/422/1*SHy-CTsuk8l70UbhTf67PQ@2x.png" alt="logo" height="70px" width="70px">
+          </div>
+          <h2 style="font-family:'Roboto';text-align: center;font-size: 100px;color:whitesmoke;text-shadow: 10px 10px 8px black;">Red Bus</h2>
+          <p style="font-family:'Roboto';text-align: center;font-size: 30px;color:white">create memories<span style="font-family: 'DM Serif Display';text-align: center;color: white"> in every travel.</span></p>
+         </div>
+        <div class="fill">
+         <a href="#" id="button"> <img class="form" src="https://cdn.freelogovectors.net/wp-content/uploads/2019/02/redbus-logo.png" alt="slide" height="120px" width="120px"></a> 
+        </div>
+        <div class="popup">
+            <div class="pop_content">
+                <center>
+                    <a href="frontbus.html" style="color:white;text-decoration: none;float: left;">Back</a
+                    <h2 style="color:white">Search Bus</h2>
+                    <form action="bus.html">
+                      
+                        <input type="text" placeholder="From" name="uname" required>
+                        <br>
+                        <br>
+                        <input type="text" placeholder="To" name="psw" required>
+                        <br>
+                        <br>
+                        <input type="date" placeholder="Date" name="date" required>
+                        <br>
+                        <br>
+                        <button type="submit">Search</button>
+                        <br>
+                        <br>
+                    </form>
+                    </center>
+            </div>
+        </div>
+        <script>
+            document.getElementById("button").addEventListener("click",function(){
+                document.querySelector(".popup").style.display = "flex";
+            })
+        </script>
+        
+         <div class="second" id="home">
+               <pre style="font-family:'Times New Roman', Times, serif;color: black;font-size: 20px;padding-top: 20px;">
+                <span style="font-family: 'DM Serif Display';font-size:45px;color: black;">CONVENIENCE ON-THE-GO.</span>
+
+                Enjoy the following exclusive features on the redBus app
+                Last Minute Booking - In a hurry to book a bus at the last 
+                minute? Choose the bus passing from your nearest boarding 
+                point and book in a few easy steps.
+                Boarding Point Navigation - Never lose your way 
+                while travelling to your boarding point!
+                Comprehensive Ticket Details- Everything that you need to 
+                make the travel hassle free - rest stop details, boarding 
+                point images, chat with co-passengers, wake-up alarm and much more!
+        
+            </pre>
+        </div>
+        
+        <img src="support.png" alt="support" width="1510px">
+        <div>
+            <center>
+            <table class="feature" cellscaping="40px">
+                <tr>
+                    <td class="feature">
+                        <img style="border-radius: 50%;" src="https://theimportantsite.com/wp-content/uploads/2019/11/clock-3179167_1280.jpg?ezimgfmt=rs:0x0/rscb8/ngcb8/notWebP" alt="time" height="200px" width="200px">
+                        <p><b>On Time Guarantee</b></p>
+                    </td>
+                    <td class="feature">
+                        <img style="border-radius: 50%;" src="https://www.gehrer.com/media/gps-route.jpg" alt="time" height="200px" width="200px">
+                        <P><b>Live Tracking</b></P>
+                    </td>
+                    <td class="feature">
+                        <img style="border-radius: 50%;" src="https://i0.wp.com/navjeevanexpress.com/wp-content/uploads/2022/02/sadkar2-3.jpg?fit=533%2C400&ssl=1" alt="time" height="200px" width="200px">
+                        <P><b>Premium Lounges</b></P>
+                    </td>
+                </tr>
+            </table>
+        </center>
+        </div>
+        <img style="margin-top: 20px;"src="awards.png" alt="awards" width="1510px">
+        <img style="margin-top: 20px;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);"src="growth.png" alt="growth" width="1510px">
+        <footer style="background-image: url('https://s3.rdbuz.com/Images/carousel/Hero_Tweak.png'); height: 60px;background-repeat: no-repeat;background-size: cover;
+        background-position: center;margin-top: 20px;">
+            <p style="font-family: 'DM Serif Display';color: white;font-size: 20px;padding-top: 20px;text-align: center;">&copy;  Red Bus.in </p>
+        </footer>
+     
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Red Bus</title>
+    <link rel="stylesheet" href="stylebus.css">
+</head>
+<style>
+    .top{
+            background-image: url('https://s3.rdbuz.com/Images/carousel/Hero_Tweak.png');
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+        }
+</style>
+<body>
+    <div class="top">
+        <h3 style="color: white;padding: 15px; text-align: center;"><span><a href="frontbus.html" style="color:white;text-decoration: none;float: left;">Back</a></span>Available bus</h3>
+    </div>
+    <table>
+        <tr>
+            <td>
+                <div class="wrapper">
+                    <img src="" alt="" id="image-animate">
+                  </div>
+            </td>
+            <td>
+                <div class="second">
+                    <img src="bus1.png" alt="first" width="1100px">
+                    <img src="bus2.png" alt="second" width="1100px">
+                    <img src="bus3.png" alt="second" width="1100px">
+                    <img src="bus4.png" alt="second" width="1100px">
+                    <img src="bus5.png" alt="second" width="1100px">
+                </div>
+            </td>
+        </tr>
+    </table>
+    
+      <script>
+        let imageAnim = document.getElementById("image-animate");
+
+let imageArray = [
+ "https://thumbs.dreamstime.com/b/interior-sleeper-bus-tourists-other-passengers-empty-interior-sleeper-bus-tourists-other-passengers-115036021.jpg",
+  "https://5.imimg.com/data5/HD/VK/GLADMIN-47712280/scania-semi-sleeper-500x500.png",
+  "https://shreesahjanandtravels.com/gallery/images/volvo_bus_hire/volvo-bus-on-rent.jpg",
+  "https://thumbs.dreamstime.com/b/interior-sleeper-bus-tourists-other-passengers-empty-interior-sleeper-bus-tourists-other-passengers-115036021.jpg"
+]
+
+let imageIndex = 0;
+
+const startImage = () =>{
+  imageAnim.setAttribute("src",imageArray[imageIndex]);
+  imageIndex++;
+  if(imageIndex >= imageArray.length){
+    imageIndex = 0;
+  }
+}
+
+setInterval(startImage,800);
+      </script>
+
+                
+                <footer style="background-image: url('https://s3.rdbuz.com/Images/carousel/Hero_Tweak.png'); height: 60px;background-repeat: no-repeat;background-size: cover;
+                background-position: center;margin-top: 40px;">
+                    <p style="font-family: 'DM Serif Display';color: white;font-size: 20px;padding-top: 10px;text-align: center;">&copy;  Red Bus.in </p>
+                </footer>
+</body>
+</html>

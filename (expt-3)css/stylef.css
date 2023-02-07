@@ -1,0 +1,59 @@
+.intro{
+  background-image: url('https://s3.rdbuz.com/Images/carousel/Hero_Tweak.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  width: 1520px;
+  height: 550px;
+  }
+  .second{
+  background-image: url('https://s2.rdbuz.com/web/images/home/city_scape_app_download.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  width: 1510px;
+  height: 650px;
+  text-align: center;
+  opacity: .7;
+  }
+ 
+
+.intro p:hover{
+  color: #fff;
+  text-shadow: 0 0 10px #fff,
+               0 0 20px #fff, 
+               0 0 40px #fff;
+}
+   
+    .topnav a {
+  text-align: right;
+  float: right;
+  color: #f2f2f2;
+  padding: 15px;
+  text-decoration: none;
+  font-size: 17px;
+}
+.topnav a:hover {
+  color: #fff;
+  text-shadow: 0 0 10px #fff,
+               0 0 20px #fff, 
+               0 0 40px #fff;
+}
+
+.feature{
+  border-collapse: collapse;
+  padding: 130px;
+  margin-top: 20px;
+  text-align: center;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+.form{
+  padding-left: 1340px;
+  position: fixed;
+}
+/*{
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  z-index: 7;
+}*/
