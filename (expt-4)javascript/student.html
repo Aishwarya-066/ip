@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>student</title>
+</head>
+<body>
+<center style="background-color: black;color:white;height: 400px;padding-top:100px;">
+<h2>Array Sort</h2>
+<p>Sort the array based on total:</p>
+
+<h2 id="display1"></h2>
+<h2 id="display2"></h2>
+</center>
+<script>
+const student = [{name:"anu",roll:1,total:490},{name:"banu",roll:2,total:430},{name:"charu",roll:3,total:465}];
+document.getElementById("display1").innerHTML = JSON.stringify(student); 
+
+student.sort(function(a, b){return b.total - a.total});
+document.getElementById("display2").innerHTML = JSON.stringify(student);
+</script>
+
+</body>
+</html>

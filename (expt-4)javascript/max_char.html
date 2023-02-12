@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center style="background-color: black;color:white;height: 400px;padding-top:100px;">
+    <h2>THE WORD IS</h2>
+    <h2 id="display2"></h2>
+    <h2 id="display1"></h2>
+    </center>  
+    <script>
+
+        let s = "chennai";
+        function maxchar(s){
+            let freq = {}
+            let str = s.toLowerCase()
+            for(let char of str){
+                freq[char] = freq[char]+1 || 1;
+            }
+            let maxc = 0;
+            let maxchar = null;
+            for(let key in freq){
+                if(freq[key] > maxc){
+                    maxc = freq[key]
+                    maxchar = key
+                }
+            }
+            return maxchar
+        }
+        document.getElementById("display2").innerHTML = s;
+        document.getElementById("display1").innerHTML = maxchar(s);
+    </script>
+</body>
+</html>

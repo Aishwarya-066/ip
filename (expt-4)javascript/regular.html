@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <center style="background-color: black;color:white;height: 400px;padding-top:100px;">
+    <h2>THE WEBSITE IS</h2>
+    <h2 id="display2"></h2>
+    <h2 id="display1"></h2>
+    <h2>THE WEBSITE IS</h2>
+    <h2 id="display3"></h2>
+    <h2 id="display4"></h2>
+  </center>
+    <script>
+        let s="www.portfolio.org.com"
+        let s1="example.display"
+        function is_website(str)
+
+{
+ regexp = /^[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,6}$/i;
+  
+        if (regexp.test(str))
+          {
+            return "yes its a website";
+          }
+        else
+          {
+            return "no its not a website";
+          }
+}
+document.getElementById("display2").innerHTML = s;
+document.getElementById("display1").innerHTML = is_website(s);
+document.getElementById("display3").innerHTML = s1;
+document.getElementById("display4").innerHTML = is_website(s1);
+    </script>
+</body>
+</html>
