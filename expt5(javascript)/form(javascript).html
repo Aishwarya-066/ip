@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>JavaScript Form validation</title>
+<link rel="stylesheet" href="/examples/css/form-style.css">
+<style>
+    body{
+        background-color: grey;
+        margin: 100px;
+        margin-left: 150px;
+        margin-right: 150px;
+    }
+    form{
+    
+        background-image: linear-gradient(rgba(255,255,255,.5), rgba(255,255,255,.5)), url("https://wallpapers-hub.art/wallpaper-images/734455.jpg");
+        background-repeat: no-repeat;
+        font-size: 20px;
+ 
+    }
+    span{
+        color: red;
+    }
+    button{
+        padding-left: 20px ;
+        padding-right: 20px ;
+        margin-bottom: 20px;
+    }
+    .info{
+        height: 500px;
+        width: 800px;
+        background-color: azure;
+    }
+    .popup{
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        display: none;
+        justify-content: right;
+        align-items: center;
+    }
+    .pop_content{
+        height: 250px;
+        width: 500px;
+        background-image: url('https://s3.rdbuz.com/Images/carousel/Hero_Tweak.png');
+        background-repeat: no-repeat;
+        padding: 20px;
+        border-radius: 5px;
+        position: fixed;
+    }
+</style>
+<script>
+
+function printError(elemId, hintMsg) {
+    document.getElementById(elemId).innerHTML = hintMsg;
+};
+function myFunction() {
+  var x = document.getElementById("pass");
+  if (x.type === "password") {
+    x.type = "text";
+  } else {
+    x.type = "password";
+  }
+};
+function myFunction1() {
+  var y = document.getElementById("cpass");
+  if (y.type === "password") {
+    y.type = "text";
+  } else {
+    y.type = "password";
+  }
+};
+
+
+function validateForm() {
+    var location = document.contactForm.location.value;
+    var name = document.contactForm.name.value;
+    var email = document.contactForm.email.value;
+    var Password = document.contactForm.Password.value;
+    var cPassword = document.contactForm.cPassword.value;
+    var mobile = document.contactForm.mobile.value;
+    var address = document.contactForm.address.value;
+    var date = document.contactForm.date.value;
+    var gender = document.contactForm.gender.value;
+    
+
+    var nameErr = emailErr = mobileErr = genderErr = pErr = cpErr = dateErr = addressErr = locationErr = true;
+   
+    
+   
+    if(name == "") {
+        printError("nameErr", " * Please enter your name");
+    } else {
+        var regex = /^[a-zA-Z\s]+$/;                
+        if(regex.test(name) === false) {
+            printError("nameErr", " * Please enter a valid name");
+        } else {
+            printError("nameErr", "");
+            nameErr = false;
+        }
+    }
+   
+  
+    if(email == "") {
+        printError("emailErr", " * Please enter your email address");
+    } else {
+     
+        var regex = /^\S+@\S+\.\S+$/;
+        if(regex.test(email) === false) {
+            printError("emailErr", " * Please enter a valid email address");
+        } else{
+            printError("emailErr", "");
+            emailErr = false;
+        }
+    }
+
+    if(Password == "") {
+        printError("pErr", " * Please enter your password");
+    } else {
+        var regex = /^[a-zA-Z0-9!@#$%^&*]{6,16}$/;                
+        if(regex.test(Password) === false) {
+            printError("pErr", " * Please enter a valid password");
+        } else {
+            printError("pErr", "");
+            pErr = false;
+        }
+    }
+   
+    if(cPassword == "") {
+        printError("cpErr", " * Please confirm your password");
+    } else {              
+        if(Password == cPassword) {
+            printError("cpErr", " * Password doesn't match");
+        } else {
+            printError("cpErr", "");
+            cpErr = false;
+        }
+    }
+   
+   
+    if(mobile == "") {
+        printError("mobileErr", " * Please enter your mobile number");
+    } else {
+        var regex = /^[1-9]\d{9}$/;
+        if(regex.test(mobile) === false) {
+            printError("mobileErr", " * Please enter a valid 10 digit mobile number");
+        } else{
+            printError("mobileErr", "");
+            mobileErr = false;
+        }
+    }
+    if(location == "Select") {
+        printError("locationErr", " * Please select your location");
+    } else {
+        printError("locationErr", "");
+        locationErr = false;
+    }
+   
+    if(date == "") {
+        printError("dateErr", " * Please enter your date of birth");
+    } else {
+    
+            printError("dateErr", "");
+            dateErr = false;
+        }
+    
+    if(address == "") {
+        printError("addressErr", " * Please enter your address");
+    } else {
+       printError("addressErr", "");
+            addressErr = false;
+        }
+   
+
+    if(gender == "") {
+        printError("genderErr", " * Please select your gender");
+    } else {
+        printError("genderErr", "");
+        genderErr = false;
+    }
+
+    if((nameErr || emailErr || mobileErr || locationErr || genderErr || addressErr || dateErr) == true) {
+       return false;
+    } else {
+      
+       var dataPreview = "You've entered the following details: \n" +
+                          "Full Name: " + name + "\n" +
+                          "Email Address: " + email + "\n" +
+                          "Mobile Number: " + mobile + "\n" +
+                          "D.O.B: " + date + "\n" +
+                          "Location: " + location + "\n" +
+                          "Gender: " + gender + "\n";
+                          
+                          alert(dataPreview);
+
+    }
+};
+</script>
+</head>
+<body>
+    <center>
+<form name="contactForm" onsubmit="return validateForm()" method="post">
+    <br>
+    <br>
+    <h2>Form</h2>
+    <table cellspacing="30">
+        <tr>
+            <td>
+                <label>Enter Your Name </label>
+            </td>
+            <td><p>:</p></td>
+            <td> <input type="text" name="name">
+                <span class="error" id="nameErr"></span></td>
+        </tr>
+        <tr>
+            <td><label>Enter Your Mail-ID </label></td>
+            <td><p>:</p></td>
+            <td><input type="text" name="email">
+                <span class="error" id="emailErr"></span></td>
+        </tr>
+        <tr>
+            <td> <label>Choose your Gender </label></td>
+            <td><p>:</p></td>
+            <td>   
+                <input type="radio" name="gender" value="male">Male
+                <label><input type="radio" name="gender" value="female">Female
+                    <span class="error" id="genderErr"></span></td>
+        </tr>
+        <tr>
+            <td><label>Create Your Password </label></td>
+            <td><p>:</p></td>
+            <td><input type="password" name="Password" id="pass">
+                <input type="checkbox" onclick="myFunction()">Show Password
+                <span class="error" id="pErr"></span></td>
+        </tr>
+        <tr>
+            <td><label>Confirm Your Password </label></td>
+            <td><p>:</p></td>
+            <td><input type="password" name="cPassword" id="cpass">
+                <input type="checkbox" onclick="myFunction1()">Show Password
+                <span class="error" id="cpErr"></span></td>
+        </tr>
+        <tr>
+            <td>
+                <label>Mobile No </label>
+            </td>
+            <td><p>:</p></td>
+            <td>     
+                <input type="text" name="mobile">
+                <span class="error" id="mobileErr"></span></td>
+        </tr>
+        <tr>
+            <td><label>Choose Your D.O.B </label></td>
+            <td><p>:</p></td>
+            <td><input type="date" name="date">
+                <span class="error" id="dateErr"></span></td>
+        </tr>
+        <tr>
+            <td>
+                <label>Enter your address </label>
+            </td>
+            <td><p>:</p></td>
+            <td>
+                <textarea name="address"></textarea>
+                <span class="error" id="addressErr"></span></td>
+        </tr>
+        <tr>
+            <td> <label>choose your location </label></td>
+            <td><p>:</p></td>
+            <td>
+                <select name="location">
+                    <option>Select</option>
+                    <option>Chennai</option>
+                    <option>Bangalore</option>
+                    <option>Mumbai</option>
+                    <option>Coimbatore</option>
+                </select>
+                <span class="error" id="locationErr"></span>
+            </td>
+        </tr>
+    </table>
+    <button type="submit" style="margin-right: 40px;">Submit</button>
+    <button type="reset">clear</button>
+    <br>
+    <br>
+</form>
+</center>
+</body>
+</html>
