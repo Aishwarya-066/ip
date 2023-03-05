@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animations</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <style>
+        body{
+            padding-top: 100px ;
+            background-color: black;
+        }
+        #div1{
+  position:relative;
+  margin-top: 80px;
+  width:400px; /* Set your image width */
+  height:300px; /* Set your image height */
+}
+#div1 img{
+  position:absolute;
+  width: 100%;
+  height: 100%;
+  top:0;
+  left:0;
+  z-index: 1;
+}
+
+#div1 img.first{
+  z-index: 2
+}
+    </style>
+</head>
+<body>
+    <center>
+<button id="button1" style="margin-right: 50px;">Click to fade image-1 to image-2</button>
+<button id="button2">Click to fade image-2 to image-1</button><br><br>
+<div id="div1"><img src="https://images.pexels.com/photos/674010/pexels-photo-674010.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="image" height="500px" width="500px" class="first">
+    <img src="https://live.staticflickr.com/46/179315734_0cec9f40b2_b.jpg" alt="image" height="500px" width="500px" class="second"></div><br>
+
+</center>
+    <script>
+$(document).ready(function(){
+  $("#button1").click(function(){
+    $("#div1 img.first").fadeOut(2000);
+    $("#div1 img.second").fadeIn(2000);
+  });
+});
+$(document).ready(function(){
+  $("#button2").click(function(){
+    $("#div1 img.second").fadeOut(2000);
+    $("#div1 img.first").fadeIn(2000);
+  });
+});
+</script>
+</body>
+</html>

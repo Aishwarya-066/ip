@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+
+    <title>Anagram</title>
+    <style>
+      body{
+        background-color: black;
+        color: white;
+        margin-top: 200px;
+      }
+    </style>
+</head>
+<body>
+  <center>
+   <h1>CHECK ANAGRAM OR NOT</h1>
+    <form>
+        ENTER THE STRING1 : <input type="text" id="string1">
+        <br><br>
+        ENTER THE STRING2 : <input type="text" id="string2"><br><br>
+        <button>
+            CHECK
+        </button>
+    </form><br><br>
+    <span></span>
+  </center>
+    <script>
+        $(document).ready(function(){
+  $("button").click(function(){
+       var s1 = $("#string1").val();
+       var s2 = $("#string2").val();
+       let str1 = s1.split('').sort().join('').toLowerCase();
+       let str2 = s2.split('').sort().join('').toLowerCase();;
+       if(str1 === str2){
+          $("span").html("It is an anagram");
+   } else { 
+    $("span").html("It is not an anagram");
+   }
+   $("form").submit(function(){return false;});
+  });
+});  
+
+    </script>
+</body>
+</html>
