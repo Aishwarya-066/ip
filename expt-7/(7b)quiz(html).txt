@@ -12,7 +12,7 @@ and open the template in the editor.
     </head>
     <body style="background-color: black;margin-top: 150px;color:white;">
     <center>
-        <div>CREATE THE QUIZ</div>
+        <div>TAKE THE QUIZ</div>
         <br>
         <form action="http://localhost:8080/WebApplication1/sessiontracking" method="get">
             <h3>What is java?</h3>
