@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body style="background-color: black;margin-top: 150px;color:white;">
+    <center>
+      <div>KNOW ABOUT THE ACTOR</div>
+        <br>
+        <br>
+        <br>
+        <form action="http://localhost:8080/WebApplication1/actors" method="get">
+            ENTER THE TITLE OR ACTOR : <input type="text" name="surf">
+            <br>
+        <br>
+        <br>
+            <input type="submit">
+        </form>
+        </center>
+    </body>
+</html>
