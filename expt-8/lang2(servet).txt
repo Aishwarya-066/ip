@@ -43,19 +43,19 @@ public class lang2 extends HttpServlet {
             out.println("<body style='background-color: black;color:white;padding:50px;'>");
          
              out.println("<center>");
-           String lang = "";
+           String language1 = "";
     Cookie[] cookies = request.getCookies();
     if (cookies != null) {
       for (Cookie cookie : cookies) {
         if (cookie.getName().equals("lang1")) {
-          language = cookie.getValue();
+          language1 = cookie.getValue();
           break;
         }
       }
     }
     String contentType = "";
     String greeting = "";
-    switch (language) {
+    switch (language1) {
       case "tamil":
           out.println("<h1>வணக்கம்</h1>");
         greeting = "தமிழ் மொழி உலகிற்கு வரவேற்கிறோம்";
