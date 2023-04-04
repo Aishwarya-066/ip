@@ -1,0 +1,61 @@
+<%@page import="java.util.*"%>
+<%@page import="country.country1"%>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Country page</title>
+    </head>
+    <body style="background-color: black;color: white;">
+    <center>
+        <h1>Country List!</h1><br>
+        <%
+List<country1> country = new ArrayList<country1>();
+country.add(new country1("USA", "Washington D.C.", "USD",1000000));
+country.add(new country1("China", "Beijing", "CNY", 2000000));
+country.add(new country1("India", "New Delhi", "INR", 3000000));
+country.add(new country1("Cyprus", "Nicosia", "Euro", 4000000));
+country.add(new country1("Germany", "Berlin", "Euro",5000000));
+Collections.sort(country, new Comparator<country1>() {
+            public int compare(country1 c1, country1 c2) {
+                return c2.getpop() - c1.getpop();
+            }
+        });
+pageContext.setAttribute("country", country);%>
+<table cellpadding=30px; border="2" style="border-collapse: collapse;">
+  <thead>
+    <tr>
+      <th>Country</th>
+      <th>Capital</th>
+      <th>Currency</th>
+      <th>Population</th>
+    </tr>
+  </thead>
+  <tbody>
+    <c:forEach items="${pageScope.country}" var="c" varStatus="status">
+    <c:choose>
+    <c:when test="${status.index < 3}">
+    <tr>
+    <td>${c.getname()}</td>
+    <td>${c.getcapital()}</td>
+    <td>${c.getcurrency()}</td>
+    <td style="color: red;">${c.getpop()}</td>
+    </tr>
+  </c:when>
+  <c:otherwise>
+      <tr>
+    <td>${c.getname()}</td>
+    <td>${c.getcapital()}</td>
+    <td>${c.getcurrency()}</td>
+    <td>${c.getpop()}</td>
+      </tr>
+  </c:otherwise>
+       </c:choose>
+</c:forEach>
+  </tbody>
+</table>
+</center>    
+</body>
+</html>

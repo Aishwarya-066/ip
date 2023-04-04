@@ -1,0 +1,49 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package country;
+
+/**
+ *
+ * @author Aishwarya
+ */
+public class country1{
+    String name;String capital;String Currency;int population;
+    public country1(String name,String capital,String Currency,int population ){
+        this.name=name;
+        this.capital = capital;
+        this.Currency = Currency;
+        this.population = population;
+    }
+    
+
+    public void setname(String name){
+        this.name=name;
+    }
+     public void setcapital(String capital){
+        this.capital=capital;
+    }
+      public void setcurrency(String Currency){
+        this.Currency=Currency;
+    }
+       public void setpop(int population){
+        this.population=population;
+    }
+         public String getname(){
+        return name;
+    }
+     public String getcapital(){
+        return capital;
+    }
+      public String getcurrency(){
+        return Currency;
+    }
+       public int getpop(){
+        return population;
+    }
+
+   
+    
+}
