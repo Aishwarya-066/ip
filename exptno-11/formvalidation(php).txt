@@ -1,0 +1,153 @@
+<!DOCTYPE html>  
+<html>  
+<head>  
+<style>
+       body{
+        background-color: black;
+        color: white;
+        margin-left: 150px;
+        margin-right: 150px;
+    }
+    button{
+        padding-left: 20px ;
+        padding-right: 20px ;
+        margin-bottom: 20px;
+    }
+    span{
+        color: red;
+    }
+ </style>
+</head>  
+<body>
+<?php
+$servername = "localhost";
+$username = "root";
+$password = "";
+
+try {
+  $conn = new PDO("mysql:host=$servername;dbname=info", $username, $password);
+  $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+} catch(PDOException $e) {
+  echo "Connection failed: " . $e->getMessage();
+}
+?>
+
+<?php
+
+$nameErr = $emailErr =$dateErr ="";
+$name = $email=$datetime= "";
+if ($_SERVER["REQUEST_METHOD"] == "POST")
+{
+   if (empty($_POST["name"]))
+     {$nameErr = "*Name is required";}
+   else
+     {
+     $name = test_input($_POST["name"]);
+     if (!preg_match("/^[a-zA-Z ]*$/",$name))
+       {
+       $nameErr = "*Only letters and white space allowed";
+       }
+     }
+ 
+   if (empty($_POST["email"]))
+     {$emailErr = "*Email is required";}
+   else
+     {
+     $email = test_input($_POST["email"]);
+     if (!preg_match("/([\w\-]+\@[\w\-]+\.[\w\-]+)/",$email))
+       {
+       $emailErr = "*Invalid email format";
+       }
+     }
+ if (empty($_POST["datetime"]))
+     {$dateErr = "*datetime is required";}
+     else
+     {
+     $datetime = test_input($_POST["datetime"]);
+     }
+   
+  }
+
+function test_input($data)
+{
+     $data = trim($data);
+     $data = stripslashes($data);
+     $data = htmlspecialchars($data);
+     return $data;
+}
+?>
+
+<center>
+   <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" >  
+<h2>APPOINTMENT</h2>
+    <table cellspacing="30">
+        <tr>
+            <td>
+                <label>Name: </label>
+            </td>
+            <td><p>:</p></td>
+            <td> <input type="text" name="name">
+ <span class="error"><?php echo $nameErr; ?> </span> </td>
+   
+        </tr>
+        <tr>
+            <td><label>E-mail </label></td>
+            <td><p>:</p></td>
+            <td><input type="text" name="email">
+<span class="error"><?php echo $emailErr; ?> </span>  </td>
+        </tr>
+        <tr>
+            <td>
+                <label>Date-time </label>
+            </td>
+            <td><p>:</p></td>
+            <td>  <input type="datetime-local" name="datetime">  
+      <span class="error"><?php echo $dateErr; ?> </span>
+                </td>
+        </tr>
+       
+</table>                            
+    <input type="submit" name="submit" value="Submit">  
+    <button type="reset">clear</button>                            
+</form>  
+
+<?php  
+    if(isset($_POST['submit'])) {  
+    if($nameErr == "" && $emailErr == "") {  
+        echo "<h3> <b>You have successfully got your appointment.</b> </h3>";  
+        echo "<h2>Your Input:</h2>";  
+        echo "Name: " .$name;  
+        echo "<br>";  
+        echo "Email: " .$email;  
+        echo "<br>";  
+        echo "date-time: " .$datetime;    
+    } else {  
+        echo "<h3> <b>You didn't filled up the form correctly.</b> </h3>";  
+    }  
+    }  
+?>  
+<?php
+
+
+$sql =" INSERT INTO `info`.`appointment` (
+`name` ,
+`email` ,
+`datetime`
+)
+VALUES (
+'$name', '$email', '$datetime'
+)";
+if ($conn->query($sql)) {
+if (!empty($_POST["name"]) && !empty($_POST["email"]) && !empty($_POST["datetime"]))
+{  echo "<br>";
+   echo "inserted successfully";
+}
+
+} else {
+echo "Error creating table: " . $conn->error;
+}
+?>
+</center>
+</body>
+</html>
