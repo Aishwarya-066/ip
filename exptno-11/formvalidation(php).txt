@@ -145,7 +145,7 @@ if (!empty($_POST["name"]) && !empty($_POST["email"]) && !empty($_POST["datetime
 }
 
 } else {
-echo "Error inserting table: " . $conn->error;
+echo "Error inserting in table: " . $conn->error;
 }
 ?>
 </center>
