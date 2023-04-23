@@ -17,7 +17,7 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
     <tr>
         <xsl:choose>
       <xsl:when test="available = 'no'">
-      <td bgcolor="red"><xsl:value-of select="title"/></td>
+      <td bgcolor="red" style="color:black;"><xsl:value-of select="title"/></td>
       </xsl:when>
       <xsl:otherwise>
          <td><xsl:value-of select="title"/></td>
