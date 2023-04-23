@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<books>
+  <book>
+    <title>The Secret</title>
+    <author> Rhonda Byrne</author>
+    <year>2006</year>
+    <price>450</price>
+    <available>yes</available>
+  </book>
+   <book>
+    <title>ponniyin selvan</title>
+    <author> Kalki Krishnamurthy</author>
+    <year>1954</year>
+    <price>950</price>
+    <available>no</available>
+  </book>
+   <book>
+    <title>War and peace</title>
+    <author>Leo Tolstoy</author>
+    <year>1867</year>
+    <price>640</price>
+    <available>yes</available>
+  </book>
+   <book>
+    <title>Think like a Monk</title>
+    <author>Jay Shetty</author>
+    <year>2020</year>
+    <price>450</price>
+    <available>no</available>
+  </book>
+    <book>
+    <title>Ikigai</title>
+    <author>Francesc Miralles and Hector Garcia</author>
+    <year>2016</year>
+    <price>650</price>
+    <available>yes</available>
+  </book>
+   <book>
+    <title>The Alchemist</title>
+    <author>Paulo Coelho</author>
+    <year>1988</year>
+    <price>399</price>
+    <available>no</available>
+  </book>
+  
+</books>
+
