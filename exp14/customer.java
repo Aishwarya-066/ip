@@ -1,4 +1,4 @@
-package ex14;
+package servicepack;
 
 
 import javax.jws.WebService;
