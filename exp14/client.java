@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package javaapplication3;
-import ex14.NewWebService;
+import servicepack.NewWebService;
 public class JavaApplication3 {
 
     public static void main(String[] args) {
@@ -13,8 +13,8 @@ public class JavaApplication3 {
     }
 
     private static String view() {
-        ex14.NewWebService_Service service = new ex14.NewWebService_Service();
-        ex14.NewWebService port = service.getNewWebServicePort();
+        servicepack.NewWebService_Service service = new servicepack.NewWebService_Service();
+        servicepack.NewWebService port = service.getNewWebServicePort();
         return port.view();
     }
     
