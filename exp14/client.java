@@ -3,18 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package javaapplication2;
-
-/**
- *
- * @author NIKITHA
- */
+package javaapplication3;
 import ex14.NewWebService;
-public class JavaApplication2 {
+public class JavaApplication3 {
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
         // TODO code application logic here
         System.out.println(view());
