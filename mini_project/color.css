@@ -40,10 +40,10 @@
 Font Variable
 ==================================*/
 :root {
-	 --theme-ordinary-font: 'Muli', sans-serif;  /* Font use for normal text and general text ok*/
+	 --theme-ordinary-font: 'Muli', sans-serif;  
 }
 :root {
-	 --theme-highlight-font: 'Comfortaa', cursive;  /* Font used in title or special area ok*/
+	 --theme-highlight-font: 'Comfortaa', cursive;  
 }
 
 
